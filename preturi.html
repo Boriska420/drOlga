@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Listă de prețuri — Dr. Olga Clinică Stomatologică Chișinău</title>
+  <meta name="description" content="Prețuri transparente pentru toate serviciile stomatologice la clinica Dr. Olga din Chișinău. Consultația inițială este gratuită." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="container navbar__inner">
+    <a href="index.html" class="navbar__logo">Dr. <span>Olga</span></a>
+    <ul class="navbar__links">
+      <li><a href="index.html">Acasă</a></li>
+      <li><a href="despre-noi.html">Despre noi</a></li>
+      <li><a href="de-ce-noi.html">De ce noi</a></li>
+      <li><a href="servicii.html">Servicii</a></li>
+      <li><a href="echipa.html">Echipa</a></li>
+      <li><a href="preturi.html">Prețuri</a></li>
+      <li><a href="testimoniale.html">Testimoniale</a></li>
+      <li><a href="contacte.html">Contacte</a></li>
+    </ul>
+    <a href="contacte.html" class="btn btn-primary navbar__cta">Programare</a>
+    <button class="hamburger" aria-label="Meniu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+<div class="mobile-nav">
+  <button class="mobile-nav__close" aria-label="Închide">&times;</button>
+  <a href="index.html">Acasă</a><a href="despre-noi.html">Despre noi</a><a href="de-ce-noi.html">De ce noi</a>
+  <a href="servicii.html">Servicii</a><a href="echipa.html">Echipa</a><a href="preturi.html">Prețuri</a>
+  <a href="testimoniale.html">Testimoniale</a><a href="contacte.html">Contacte</a>
+  <a href="contacte.html" class="btn btn-primary">Programare</a>
+</div>
+
+<section class="page-hero">
+  <div class="container">
+    <div class="breadcrumb"><a href="index.html">Acasă</a> <span>/</span> <span>Prețuri</span></div>
+    <h1>Listă de prețuri</h1>
+    <p>Prețuri clare, fără surprize. Consultația inițială este întotdeauna gratuită.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+
+    <!-- Notice -->
+    <div style="background:var(--steel-light); border-radius:var(--radius-lg); padding:20px 28px; margin-bottom:48px; display:flex; align-items:flex-start; gap:14px;" data-reveal>
+      <i class="fa-solid fa-circle-info" style="color:var(--steel); margin-top:3px; flex-shrink:0;"></i>
+      <p style="font-size:0.88rem; color:var(--charcoal); line-height:1.65;">
+        Prețurile afișate sunt orientative și pot varia în funcție de complexitatea cazului, numărul de dinți tratați și materialele utilizate. La consultație primiți un plan de tratament detaliat cu costurile exacte. <strong>Consultația inițială este gratuită.</strong>
+      </p>
+    </div>
+
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:32px;" data-reveal>
+
+      <!-- Consultații -->
+      <div class="price-table">
+        <div class="price-table__header">
+          <h3><i class="fa-solid fa-stethoscope" style="margin-right:10px; opacity:0.7;"></i>Consultații</h3>
+        </div>
+        <div class="price-row"><span class="price-row__name">Consultație inițială</span><span class="price-row__price" style="color:var(--steel); font-weight:600;">GRATUIT</span></div>
+        <div class="price-row"><span class="price-row__name">Consultație de specialitate</span><span class="price-row__price">200 MDL</span></div>
+        <div class="price-row"><span class="price-row__name">Radiografie digitală (periapicală)</span><span class="price-row__price">80 MDL</span></div>
+        <div class="price-row"><span class="price-row__name">Ortopantomogramă (panoramică)</span><span class="price-row__price">250 MDL</span></div>
+        <div class="price-row"><span class="price-row__name">CT dentar (CBCT)</span><span class="price-row__price">600 MDL</span></div>
+      </div>
+
+      <!-- Profilaxie -->
+      <div class="price-table">
+        <div class="price-table__header">
+          <h3><i class="fa-solid fa-tooth" style="margin-right:10px; opacity:0.7;"></i>Profilaxie dentară</h3>
+        </div>
+        <div class="price-row"><span class="price-row__name">Detartraj cu ultrasunete (arcadă)</span><span class="price-row__price">350 MDL</span></div>
+        <div class="price-row"><span class="price-row__name">Detartraj complet (ambele arcade)</span><span class="price-row__price">600 MDL</span></div>
+        <div class="price-row"><span class="price-row__name">Airflow (per arcadă)</span><span class="price-row__price">400 MDL</span></div>
+        <div class="price-row"><span class="price-row__name">Polisaj profesional</span><span class="price-row__price">200 MDL</span></div>
+        <div class="price-row"><span class="price-row__name">Fluorurare (per arcadă)</span><span class="price-row__price">150 MDL</span></div>
+      </div>
+
+      <!-- Estetică -->
+      <div class="price-table">
+        <div class="price-table__header">
+          <h3><i class="fa-solid fa-star" style="margin-right:10px; opacity:0.7;"></i>Stomatologie estetică</h3>
+        </div>
+        <div class="price-row"><span class="price-row__name">Albire profesională (în cabinet)</span><span class="price-row__price">2 800 MDL</span></div>
+        <div class="price-row"><span class="price-row__name">Kit albire la domiciliu (cu gutiere)</span><span class="price-row__price">1 200 MDL</span></div>
+        <div class="price-row"><span class="price-row__name">Fațetă compozit (per dinte)</span><span class="price-row__price">1 500 MDL</span></div>
+        <div class="price-row"><span class="price-row__name">Fațetă porțelan (per dinte)</span><span class="price-row__price">4 500 MDL</span></div>
+        <div class="price-row"><span class="price-row__name">Bonding / restaurare estetică</span><span class="price-row__price">800 – 1 500 MDL</span></div>
+      </div>
+
+      <!-- Implantologie -->
+      <div class="price-table">
+        <div class="price-table__header">
+          <h3><i class="fa-solid fa-screwdriver-wrench" style="margin-right:10px; opacity:0.7;"></i>Implantologie</h3>
+        </div>
+        <div class="price-row"><span class="price-row__name">Implant dentar (fără coroană)</span><span class="price-row__price">de la 12 000 MDL</span></div>
+        <div class="price-row"><span class="price-row__name">Coroană pe implant (zirconiu)</span><span class="price-row__price">de la 5 500 MDL</span></div>
+        <div class="price-row"><span class="price-row__name">Grefare osoasă</span><span class="price-row__price">de la 3 000 MDL</span></div>
+        <div class="price-row"><span class="price-row__name">Sinus lift</span><span class="price-row__price">de la 5 000 MDL</span></div>
+        <div class="price-row"><span class="price-row__name">All-on-4 (per arcadă)</span><span class="price-row__price">de la 55 000 MDL</span></div>
+      </div>
+
+      <!-- Endodonție -->
+      <div class="price-table">
+        <div class="price-table__header">
+          <h3><i class="fa-solid fa-syringe" style="margin-right:10px; opacity:0.7;"></i>Endodonție</h3>
+        </div>
+        <div class="price-row"><span class="price-row__name">Tratament canal (1 canal)</span><span class="price-row__price">1 200 MDL</span></div>
+        <div class="price-row"><span class="price-row__name">Tratament canal (2 canale)</span><span class="price-row__price">1 800 MDL</span></div>
+        <div class="price-row"><span class="price-row__name">Tratament canal (3-4 canale)</span><span class="price-row__price">2 400 – 3 200 MDL</span></div>
+        <div class="price-row"><span class="price-row__name">Retratament endodontic</span><span class="price-row__price">de la 1 800 MDL</span></div>
+      </div>
+
+      <!-- Protetica -->
+      <div class="price-table">
+        <div class="price-table__header">
+          <h3><i class="fa-solid fa-teeth-open" style="margin-right:10px; opacity:0.7;"></i>Protetica dentară</h3>
+        </div>
+        <div class="price-row"><span class="price-row__name">Coroană metal-ceramică</span><span class="price-row__price">2 800 MDL</span></div>
+        <div class="price-row"><span class="price-row__name">Coroană ceramică pură (E-max)</span><span class="price-row__price">4 200 MDL</span></div>
+        <div class="price-row"><span class="price-row__name">Coroană zirconiu</span><span class="price-row__price">4 800 MDL</span></div>
+        <div class="price-row"><span class="price-row__name">Proteză mobilizabilă parțială</span><span class="price-row__price">de la 3 500 MDL</span></div>
+        <div class="price-row"><span class="price-row__name">Proteză mobilizabilă totală</span><span class="price-row__price">de la 5 500 MDL</span></div>
+      </div>
+
+    </div>
+
+    <p class="price-note" style="margin-top:24px;">* Prețurile sunt exprimate în lei moldovenești (MDL) și includ TVA. Prețul final poate varia în funcție de evaluarea clinică individuală.</p>
+
+    <div style="text-align:center; margin-top:52px;" data-reveal>
+      <h3 style="margin-bottom:12px;">Aveți nevoie de un deviz personalizat?</h3>
+      <p style="color:var(--text-muted); margin-bottom:28px; font-size:0.92rem;">Programați o consultație gratuită și primiți un plan de tratament cu costuri exacte.</p>
+      <a href="contacte.html" class="btn btn-primary">Programare gratuită</a>
+    </div>
+
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer__cta">
+      <div>
+        <h3>Primul pas spre un zâmbet mai sănătos<br>începe cu un singur apel.</h3>
+        <p>Programați o consultație gratuită astăzi — fără obligații, fără așteptare lungă.</p>
+      </div>
+      <div class="footer__cta-btns">
+        <a href="https://wa.me/37369000000" target="_blank" rel="noopener" class="btn btn-steel"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
+        <a href="viber://chat?number=37369000000" class="btn btn-ghost-white"><i class="fa-brands fa-viber"></i> Viber</a>
+        <a href="https://instagram.com/drolga.md" target="_blank" rel="noopener" class="btn btn-ghost-white"><i class="fa-brands fa-instagram"></i> Instagram</a>
+      </div>
+    </div>
+    <div class="footer__grid">
+      <div>
+        <div class="footer__brand-logo">Dr. <span>Olga</span></div>
+        <p class="footer__tagline">Clinică stomatologică modernă în inima Chișinăului. Sănătatea dumneavoastră orală este prioritatea noastră.</p>
+        <div class="footer__socials">
+          <a href="https://facebook.com/drolga.md" target="_blank" rel="noopener" class="footer__social-link" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="https://instagram.com/drolga.md" target="_blank" rel="noopener" class="footer__social-link" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+        </div>
+      </div>
+      <div class="footer__col"><h4>Navigare</h4><ul><li><a href="index.html">Acasă</a></li><li><a href="despre-noi.html">Despre noi</a></li><li><a href="de-ce-noi.html">De ce noi</a></li><li><a href="servicii.html">Servicii</a></li><li><a href="echipa.html">Echipa noastră</a></li><li><a href="preturi.html">Listă de prețuri</a></li><li><a href="testimoniale.html">Testimoniale</a></li><li><a href="contacte.html">Contacte</a></li></ul></div>
+      <div class="footer__col"><h4>Servicii</h4><ul><li><a href="servicii.html">Stomatologie estetică</a></li><li><a href="servicii.html">Implantologie</a></li><li><a href="servicii.html">Ortodonție</a></li><li><a href="servicii.html">Profilaxie dentară</a></li><li><a href="servicii.html">Endodonție</a></li><li><a href="servicii.html">Protetica dentară</a></li></ul></div>
+      <div class="footer__col">
+        <h4>Contact</h4>
+        <div class="footer__contact-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.99 13a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.92 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg><span><a href="tel:+37369000000">+373 69 000 000</a></span></div>
+        <div class="footer__contact-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg><span><a href="mailto:contact@drolga.md">contact@drolga.md</a></span></div>
+        <div class="footer__contact-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg><span>Strada Exemplu 12, Chișinău</span></div>
+        <div class="footer__contact-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg><span>Luni – Vineri: 09:00 – 18:00<br>Sâmbătă: 09:00 – 14:00</span></div>
+      </div>
+    </div>
+    <div class="footer__map"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3360.201469510198!2d28.6198855!3d47.1460789!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40cbd1239019fd55%3A0xb0157df76dd27756!2sDr.%20Olga!5e1!3m2!1sen!2s!4v1781721201476!5m2!1sen!2s" width="100%" height="280" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Locația clinicii Dr. Olga"></iframe></div>
+    <div class="footer__bottom">
+      <span>© 2025 Dr. Olga. Toate drepturile rezervate.</span>
+      <div class="footer__bottom-links"><a href="termeni.html">Termeni și condiții</a><a href="confidentialitate.html">Politica de confidențialitate</a></div>
+    </div>
+  </div>
+</footer>
+<script src="js/shared.js"></script>
+</body>
+</html>
