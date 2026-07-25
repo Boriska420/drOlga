@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const mobileClose = document.querySelector('.mobile-nav__close');
 
   if (hamburger && mobileNav) {
-    hamburger.addEventListener('click', () => mobileNav.classList.add('open'));
+    hamburger.addEventListener('click', () => mobileNav.classList.toggle('open'));
     mobileClose?.addEventListener('click', () => mobileNav.classList.remove('open'));
     mobileNav.querySelectorAll('a').forEach(a =>
       a.addEventListener('click', () => mobileNav.classList.remove('open'))
