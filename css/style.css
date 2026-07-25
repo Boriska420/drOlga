@@ -909,7 +909,7 @@ footer {
   .hero { grid-template-columns: 1fr; min-height: auto; }
   .hero__content { padding: 40px 28px 32px; order: 2; }
   .hero__visual { order: 1; }
-  .hero__photo { min-height: 280px; background-size: cover; background-position: center; }
+  .hero__photo { min-height: 280px; background-size: cover; background-position: center 33%; }
   .hero__badge { display: none; }
 
   .grid-2, .about-intro, .contacts-grid { grid-template-columns: 1fr; }
