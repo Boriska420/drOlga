@@ -367,6 +367,9 @@ footer {
   display: grid;
   grid-template-columns: 1fr 1fr;
   padding-top: 72px;
+
+  /* max-height: 1196px;
+  overflow: hidden; */
 }
 .hero__content {
   display: flex;
@@ -417,6 +420,11 @@ footer {
   height: 100%;
   border-radius: 0;
   min-height: 600px;
+    background-image: url(../images/Echipa.jpg);
+    max-height: 1196px;
+    background-repeat: no-repeat;
+    background-position: 0px -12rem;
+    background-size: cover;
 }
 .hero__badge {
   position: absolute;
@@ -871,7 +879,7 @@ footer {
   .hero { grid-template-columns: 1fr; min-height: auto; }
   .hero__content { padding: 40px 0 32px; order: 2; }
   .hero__visual { order: 1; }
-  .hero__visual .img-placeholder { min-height: 280px; }
+  .hero__visual .img-placeholder { min-height: 280px; background-size: cover; background-position: center; }
   .hero__badge { display: none; }
 
   .grid-2, .about-intro, .contacts-grid { grid-template-columns: 1fr; }
