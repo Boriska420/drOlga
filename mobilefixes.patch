@@ -1,0 +1,142 @@
+diff --git a/css/style.css b/css/style.css
+index 5a77fff..931c824 100644
+--- a/css/style.css
++++ b/css/style.css
+@@ -228,7 +228,7 @@ h4 { font-size: 1.15rem; font-weight: 400; }
+ 
+ /* Mobile nav */
+ .mobile-nav {
+-  display: none;
++  display: flex;
+   position: fixed;
+   inset: 0;
+   z-index: 999;
+@@ -237,8 +237,19 @@ h4 { font-size: 1.15rem; font-weight: 400; }
+   align-items: center;
+   justify-content: center;
+   gap: 36px;
++  opacity: 0;
++  visibility: hidden;
++  pointer-events: none;
++  transform: translateY(-12px);
++  transition: opacity 0.3s ease, transform 0.3s ease, visibility 0s linear 0.3s;
++}
++.mobile-nav.open {
++  opacity: 1;
++  visibility: visible;
++  pointer-events: auto;
++  transform: translateY(0);
++  transition: opacity 0.3s ease, transform 0.3s ease;
+ }
+-.mobile-nav.open { display: flex; }
+ .mobile-nav a {
+   font-family: var(--font-display);
+   font-size: 2rem;
+@@ -247,6 +258,13 @@ h4 { font-size: 1.15rem; font-weight: 400; }
+   transition: color 0.2s;
+ }
+ .mobile-nav a:hover { color: var(--steel); }
++.mobile-nav a.btn {
++  font-family: var(--font-body);
++  font-size: 0.9rem;
++  font-weight: 500;
++  color: var(--white);
++}
++.mobile-nav a.btn:hover { color: var(--white); }
+ .mobile-nav__close {
+   position: absolute;
+   top: 24px; right: 28px;
+@@ -385,7 +403,7 @@ footer {
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+-  padding: 80px 56px 80px 0;
++  padding: 80px 28px 80px max(28px, calc((100vw - 1160px) / 2 + 28px));
+ }
+ .hero__content h1 {
+   margin-bottom: 24px;
+@@ -614,7 +632,7 @@ footer {
+    ABOUT PAGE
+    ============================================================ */
+ .about-intro { display: grid; grid-template-columns: 1fr 1fr; gap: 72px; align-items: center; }
+-.about-intro .photo { height: 520px; }
++.about-intro .photo { height: auto; aspect-ratio: 3 / 2; }
+ .values-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; margin-top: 48px; }
+ .value-card {
+   padding: 32px;
+@@ -749,6 +767,7 @@ footer {
+ /* ============================================================
+    PRICE LIST PAGE
+    ============================================================ */
++.price-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }
+ .price-table {
+   background: var(--white);
+   border-radius: var(--radius-lg);
+@@ -888,7 +907,7 @@ footer {
+   .hamburger { display: flex; }
+ 
+   .hero { grid-template-columns: 1fr; min-height: auto; }
+-  .hero__content { padding: 40px 0 32px; order: 2; }
++  .hero__content { padding: 40px 28px 32px; order: 2; }
+   .hero__visual { order: 1; }
+   .hero__photo { min-height: 280px; background-size: cover; background-position: center; }
+   .hero__badge { display: none; }
+@@ -906,7 +925,9 @@ footer {
+   .footer__cta { padding: 36px 28px; }
+   .footer__cta-btns { flex-direction: column; width: 100%; }
+ 
+-  .price-table__header { flex-direction: column; align-items: flex-start; gap: 8px; }
++  .price-grid { grid-template-columns: 1fr; }
++  .price-table__header { flex-direction: column; align-items: flex-start; gap: 8px; padding: 18px 20px; }
++  .price-row { padding: 16px 20px; flex-wrap: wrap; gap: 6px 12px; }
+   .form-row { grid-template-columns: 1fr; }
+ 
+   h1 { font-size: 2.1rem; }
+diff --git a/despre-noi.html b/despre-noi.html
+index 5dc3d02..ac882c0 100644
+--- a/despre-noi.html
++++ b/despre-noi.html
+@@ -58,7 +58,7 @@
+   <div class="container">
+     <div class="about-intro" data-reveal>
+       <div>
+-        <img class="photo" style="height:520px;" src="./images/Familia.jpg" alt="Echipa clinicii Dr. Olga alături de fondatoarea Dr. Olga Munteanu" loading="lazy" decoding="async" />
++        <img class="photo" src="./images/Familia.jpg" alt="Echipa clinicii Dr. Olga alături de fondatoarea Dr. Olga Munteanu" loading="lazy" decoding="async" />
+       </div>
+       <div>
+         <span class="eyebrow">Povestea noastră</span>
+diff --git a/index.html b/index.html
+index d0d5a77..953de79 100644
+--- a/index.html
++++ b/index.html
+@@ -75,7 +75,7 @@
+ <!-- ===== HERO ===== -->
+ <section class="hero">
+   <div class="container" style="display:contents;">
+-    <div class="hero__content container" style="padding-right: 0; grid-column:1; max-width:none; margin:0; padding-left: max(28px, calc((100vw - 1160px)/2 + 28px));">
++    <div class="hero__content">
+       <span class="eyebrow">Clinică Stomatologică · Strășeni</span>
+       <h1>Sănătate dentară<br>cu <em>grijă autentică</em></h1>
+       <p class="hero__subtitle">
+@@ -212,7 +212,7 @@
+   <div class="container">
+     <div class="about-intro" data-reveal>
+       <div>
+-        <img class="photo" style="height:480px;" src="./images/Familia.jpg" alt="Echipa clinicii Dr. Olga alături de fondatoarea Dr. Olga Munteanu" loading="lazy" decoding="async" />
++        <img class="photo" src="./images/Familia.jpg" alt="Echipa clinicii Dr. Olga alături de fondatoarea Dr. Olga Munteanu" loading="lazy" decoding="async" />
+       </div>
+       <div>
+         <span class="eyebrow">Despre noi</span>
+diff --git a/preturi.html b/preturi.html
+index ee77773..6548a01 100644
+--- a/preturi.html
++++ b/preturi.html
+@@ -57,7 +57,7 @@
+       </p>
+     </div>
+ 
+-    <div style="display:grid; grid-template-columns:1fr 1fr; gap:32px;" data-reveal>
++    <div class="price-grid" data-reveal>
+ 
+       <!-- Consultații -->
+       <div class="price-table">
