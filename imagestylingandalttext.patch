@@ -1,0 +1,402 @@
+diff --git a/css/style.css b/css/style.css
+index 92d9337..ef88cee 100644
+--- a/css/style.css
++++ b/css/style.css
+@@ -129,7 +129,7 @@ h4 { font-size: 1.15rem; font-weight: 400; }
+ }
+ .btn-ghost-white:hover { background: rgba(255,255,255,0.1); }
+ 
+-/* --- Placeholder image blocks --- */
++/* --- Placeholder image blocks (sections without a photo yet) --- */
+ .img-placeholder {
+   background: var(--placeholder-bg);
+   border-radius: var(--radius-lg);
+@@ -144,6 +144,16 @@ h4 { font-size: 1.15rem; font-weight: 400; }
+   text-transform: uppercase;
+ }
+ 
++/* --- Real photos --- */
++.photo {
++  display: block;
++  width: 100%;
++  height: 100%;
++  object-fit: cover;
++  object-position: center;
++  border-radius: var(--radius-lg);
++}
++
+ /* ============================================================
+    NAVBAR
+    ============================================================ */
+@@ -416,15 +426,14 @@ footer {
+   position: relative;
+   background: var(--off-white);
+ }
+-.hero__visual .img-placeholder {
++.hero__photo {
+   height: 100%;
+-  border-radius: 0;
+   min-height: 600px;
+-    background-image: url(../images/Echipa.jpg);
+-    max-height: 1196px;
+-    background-repeat: no-repeat;
+-    background-position: 0px -12rem;
+-    background-size: cover;
++  max-height: 1196px;
++  background-image: url(../images/Echipa.jpg);
++  background-repeat: no-repeat;
++  background-position: 0px -12rem;
++  background-size: cover;
+ }
+ .hero__badge {
+   position: absolute;
+@@ -469,7 +478,7 @@ footer {
+   background: var(--white);
+ }
+ .service-card:hover { box-shadow: var(--shadow-lg); transform: translateY(-3px); }
+-.service-card__img .img-placeholder { height: 200px; border-radius: 0; }
++.service-card__img .photo { height: 200px; border-radius: 0; }
+ .service-card__body { padding: 24px; }
+ .service-card__body h3 {
+   font-size: 1.2rem;
+@@ -605,7 +614,7 @@ footer {
+    ABOUT PAGE
+    ============================================================ */
+ .about-intro { display: grid; grid-template-columns: 1fr 1fr; gap: 72px; align-items: center; }
+-.about-intro .img-placeholder { height: 520px; }
++.about-intro .photo { height: 520px; }
+ .values-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; margin-top: 48px; }
+ .value-card {
+   padding: 32px;
+@@ -637,7 +646,7 @@ footer {
+   transition: all 0.25s;
+ }
+ .team-card:hover { box-shadow: var(--shadow-lg); transform: translateY(-3px); }
+-.team-card__photo .img-placeholder { height: 280px; border-radius: 0; }
++.team-card__photo .photo { height: 280px; border-radius: 0; object-position: center 20%; }
+ .team-card__body { padding: 28px; }
+ .team-card__name {
+   font-family: var(--font-display);
+@@ -682,7 +691,7 @@ footer {
+ }
+ .service-item:nth-child(even) .service-item__img { order: 2; }
+ .service-item:nth-child(even) .service-item__content { order: 1; }
+-.service-item__img .img-placeholder { height: 320px; border-radius: 0; }
++.service-item__img .photo { height: 320px; border-radius: 0; }
+ .service-item__content {
+   padding: 56px 52px;
+   display: flex;
+@@ -879,7 +888,7 @@ footer {
+   .hero { grid-template-columns: 1fr; min-height: auto; }
+   .hero__content { padding: 40px 0 32px; order: 2; }
+   .hero__visual { order: 1; }
+-  .hero__visual .img-placeholder { min-height: 280px; background-size: cover; background-position: center; }
++  .hero__photo { min-height: 280px; background-size: cover; background-position: center; }
+   .hero__badge { display: none; }
+ 
+   .grid-2, .about-intro, .contacts-grid { grid-template-columns: 1fr; }
+diff --git a/de-ce-noi.html b/de-ce-noi.html
+index a21be99..256d8b6 100644
+--- a/de-ce-noi.html
++++ b/de-ce-noi.html
+@@ -21,7 +21,7 @@
+     .reason-block:last-child { border-bottom: none; }
+     .reason-block:nth-child(even) .reason-block__img { order: 2; }
+     .reason-block:nth-child(even) .reason-block__content { order: 1; }
+-    .reason-block__img .img-placeholder { height: 100%; min-height: 300px; border-radius: 0; }
++    .reason-block__img .photo { height: 100%; min-height: 300px; border-radius: 0; }
+     .reason-block__content {
+       padding: 56px 52px;
+       display: flex;
+@@ -115,8 +115,7 @@
+     </div>
+ 
+     <div class="reason-block" data-reveal>
+-      <!-- <div class="reason-block__img"><div class="img-placeholder">IMAGINE ECHIPAMENTE / TECHNOLOGIE</div></div> -->
+-      <div class="reason-block__img"><img class="img-placeholder" src="./images/Tehnologie.jpg"></img></div>
++      <div class="reason-block__img"><img class="photo" src="./images/Tehnologie.jpg" alt="Echipament de diagnosticare stomatologică digitală la clinica Dr. Olga" /></div>
+       <div class="reason-block__content">
+         <div class="reason-block__number">01</div>
+         <h3>Tehnologie de diagnosticare avansată</h3>
+@@ -125,8 +124,7 @@
+     </div>
+ 
+     <div class="reason-block" data-reveal>
+-      <!-- <div class="reason-block__img"><div class="img-placeholder">IMAGINE MEDICI / CONSULTAȚIE</div></div> -->
+-       <div class="reason-block__img"><img class="img-placeholder" src="./images/Echipa2.jpg"></img></div>
++      <div class="reason-block__img"><img class="photo" src="./images/Echipa2.jpg" alt="Echipa de medici stomatologi ai clinicii Dr. Olga" /></div>
+       <div class="reason-block__content">
+         <div class="reason-block__number">02</div>
+         <h3>Specialiști cu formare europeană continuă</h3>
+@@ -135,8 +133,7 @@
+     </div>
+ 
+     <div class="reason-block" data-reveal>
+-      <!-- <div class="reason-block__img"><div class="img-placeholder">IMAGINE PACIENT / ATMOSFERĂ</div></div> -->
+-       <div class="reason-block__img"><img class="img-placeholder" src="./images/Nedureros.jpg"></img></div>
++      <div class="reason-block__img"><img class="photo" src="./images/Nedureros.jpg" alt="Pacientă relaxată în timpul unui tratament stomatologic nedureros la clinica Dr. Olga" /></div>
+       <div class="reason-block__content">
+         <div class="reason-block__number">03</div>
+         <h3>Tratamente complet nedureroase</h3>
+@@ -145,8 +142,7 @@
+     </div>
+ 
+     <div class="reason-block" data-reveal>
+-      <!-- <div class="reason-block__img"><div class="img-placeholder">IMAGINE STERILIZARE / CURĂȚENIE</div></div> -->
+-      <div class="reason-block__img"><img class="img-placeholder" src="./images/Igiena.jpg"></img></div>
++      <div class="reason-block__img"><img class="photo" src="./images/Igiena.jpg" alt="Standarde de igienă și sterilizare la clinica Dr. Olga" /></div>
+       <div class="reason-block__content">
+         <div class="reason-block__number">04</div>
+         <h3>Standarde de igienă fără compromisuri</h3>
+@@ -155,8 +151,7 @@
+     </div>
+ 
+     <div class="reason-block" data-reveal>
+-      <!-- <div class="reason-block__img"><div class="img-placeholder">IMAGINE CONSULTAȚIE / PLANIFICARE</div></div> -->
+-       <div class="reason-block__img"><img class="img-placeholder" src="./images/Transparenta.jpg"></img></div>
++      <div class="reason-block__img"><img class="photo" src="./images/Transparenta.jpg" alt="Consultație de planificare a tratamentului la clinica Dr. Olga" /></div>
+       <div class="reason-block__content">
+         <div class="reason-block__number">05</div>
+         <h3>Transparență completă în costuri și opțiuni</h3>
+diff --git a/despre-noi.html b/despre-noi.html
+index 757110b..310164d 100644
+--- a/despre-noi.html
++++ b/despre-noi.html
+@@ -58,8 +58,7 @@
+   <div class="container">
+     <div class="about-intro" data-reveal>
+       <div>
+-        <!-- <div class="img-placeholder" style="height:520px;">FOTOGRAFIE DR. OLGA / CLINICĂ</div> -->
+-        <img class="img-placeholder" style="height:520px;" src="./images/Familia.jpg"></img>
++        <img class="photo" style="height:520px;" src="./images/Familia.jpg" alt="Echipa clinicii Dr. Olga alături de fondatoarea Dr. Olga Munteanu" />
+       </div>
+       <div>
+         <span class="eyebrow">Povestea noastră</span>
+diff --git a/echipa.html b/echipa.html
+index e4734a0..9849ec7 100644
+--- a/echipa.html
++++ b/echipa.html
+@@ -53,7 +53,7 @@
+ 
+       <!-- Card 1 - Dr. Olga (lead) -->
+       <div class="team-card" style="grid-column: span 1;">
+-        <div class="team-card__photo"><div class="img-placeholder" style="height:320px; border-radius:0;">FOTOGRAFIE DR. OLGA</div></div>
++        <div class="team-card__photo"><img class="photo" src="./images/Dr_Olga.jpg" alt="Dr. Olga Munteanu, fondator și medic stomatolog primar la clinica Dr. Olga" /></div>
+         <div class="team-card__body">
+           <div class="team-card__name">Dr. Olga Munteanu</div>
+           <div class="team-card__title">Fondator · Medic Stomatolog Primar</div>
+@@ -73,7 +73,7 @@
+ 
+       <!-- Card 2 -->
+       <div class="team-card">
+-        <div class="team-card__photo"><div class="img-placeholder" style="height:320px; border-radius:0;">FOTOGRAFIE MEDIC</div></div>
++        <div class="team-card__photo"><img class="photo" src="./images/Dr_Nina.jpg" alt="Dr. Nina Munteanu, specialist implantologie și chirurgie orală la clinica Dr. Olga" /></div>
+         <div class="team-card__body">
+           <div class="team-card__name">Dr. Nina Munteanu</div>
+           <div class="team-card__title">Specialist Implantologie & Chirurgie Orală</div>
+@@ -93,7 +93,7 @@
+ 
+       <!-- Card 3 -->
+       <div class="team-card">
+-        <div class="team-card__photo"><div class="img-placeholder" style="height:320px; border-radius:0;">FOTOGRAFIE MEDIC</div></div>
++        <div class="team-card__photo"><img class="photo" src="./images/Dr_Vladimir.jpg" alt="Dr. Vladimir Munteanu, specialist ortodonție la clinica Dr. Olga" /></div>
+         <div class="team-card__body">
+           <div class="team-card__name">Dr. Vladimir Munteanu</div>
+           <div class="team-card__title">Specialist Ortodonție</div>
+@@ -113,7 +113,7 @@
+ 
+       <!-- Card 4 -->
+       <div class="team-card">
+-        <div class="team-card__photo"><div class="img-placeholder" style="height:320px; border-radius:0;">FOTOGRAFIE MEDIC</div></div>
++        <div class="team-card__photo"><img class="photo" src="./images/Dr_Gheorghe.jpg" alt="Dr. Gheorghe Munteanu, specialist endodonție și stomatologie generală la clinica Dr. Olga" /></div>
+         <div class="team-card__body">
+           <div class="team-card__name">Dr. Gheorghe Munteanu</div>
+           <div class="team-card__title">Specialist Endodonție & Stomatologie Generală</div>
+@@ -133,7 +133,7 @@
+ 
+       <!-- Card 5 -->
+       <div class="team-card">
+-        <div class="team-card__photo"><div class="img-placeholder" style="height:320px; border-radius:0;">FOTOGRAFIE MEDIC</div></div>
++        <div class="team-card__photo"><img class="photo" src="./images/Dr_Mihai.jpg" alt="Dr. Mihai Munteanu, specialist stomatologie estetică și protetică la clinica Dr. Olga" /></div>
+         <div class="team-card__body">
+           <div class="team-card__name">Dr. Mihai Munteanu</div>
+           <div class="team-card__title">Specialist Stomatologie Estetică & Protetica</div>
+@@ -153,7 +153,7 @@
+ 
+       <!-- Card 6 -->
+       <div class="team-card">
+-        <div class="team-card__photo"><div class="img-placeholder" style="height:320px; border-radius:0;">FOTOGRAFIE MEDIC</div></div>
++        <div class="team-card__photo"><img class="photo" src="./images/Dr_Ion.jpg" alt="Dr. Ion Munteanu, specialist stomatologie estetică și protetică la clinica Dr. Olga" /></div>
+         <div class="team-card__body">
+           <div class="team-card__name">Dr. Ion Munteanu</div>
+           <div class="team-card__title">Specialist Stomatologie Estetică & Protetica</div>
+diff --git a/index.html b/index.html
+index 221f49f..fc9dee0 100644
+--- a/index.html
++++ b/index.html
+@@ -100,11 +100,8 @@
+         </div>
+       </div>
+     </div>
+-    <div class="hero__visual" style="position:relative;"
+-    
+-    >
+-      <!-- <img src="./images/Echipa.jpg" class="img-placeholder" style="height:100%; min-height:600px; border-radius:0;" /> -->
+-      <div class="img-placeholder" style="height:100%; min-height:600px; border-radius:0;"></div>
++    <div class="hero__visual">
++      <div class="hero__photo" role="img" aria-label="Echipa clinicii Dr. Olga în cabinetul stomatologic"></div>
+       <div class="hero__badge">
+         <div class="hero__badge-icon"><i class="fa-solid fa-shield-heart"></i></div>
+         <div class="hero__badge-text">
+@@ -113,16 +110,6 @@
+         </div>
+       </div>
+     </div>
+-    <!-- <div class="hero__visual" style="position:relative;">
+-      <div class="img-placeholder" style="height:100%; min-height:600px; border-radius:0;">IMAGINE PRINCIPALĂ</div>
+-      <div class="hero__badge">
+-        <div class="hero__badge-icon"><i class="fa-solid fa-shield-heart"></i></div>
+-        <div class="hero__badge-text">
+-          <strong>Certificare internațională</strong>
+-          <span>Standarde europene de calitate</span>
+-        </div>
+-      </div>
+-    </div> -->
+   </div>
+ </section>
+ 
+@@ -136,8 +123,7 @@
+     </div>
+     <div class="services-grid" data-reveal>
+       <div class="service-card">
+-        <!-- <div class="service-card__img"><div class="img-placeholder">IMAGINE SERVICIU</div></div> -->
+-        <div class="service-card__img"><img src="./images/StomatologieEstetica.jpg" class="img-placeholder"></img></div>
++        <div class="service-card__img"><img src="./images/StomatologieEstetica.jpg" class="photo" alt="Tratament de stomatologie estetică la clinica Dr. Olga" /></div>
+         <div class="service-card__body">
+           <h3>Stomatologie estetică</h3>
+           <p>Fațete, albire dentară și restaurări ce redau strălucirea naturală a zâmbetului dumneavoastră.</p>
+@@ -145,8 +131,7 @@
+         </div>
+       </div>
+       <div class="service-card">
+-        <!-- <div class="service-card__img"><div class="img-placeholder">IMAGINE SERVICIU</div></div> -->
+-         <div class="service-card__img"><img src="./images/Implantologie.jpg" class="img-placeholder"></img></div>
++        <div class="service-card__img"><img src="./images/Implantologie.jpg" class="photo" alt="Procedură de implantologie dentară la clinica Dr. Olga" /></div>
+         <div class="service-card__body">
+           <h3>Implantologie</h3>
+           <p>Implanturi dentare de calitate superioară, realizate cu precizie și tehnologie de ultimă generație.</p>
+@@ -154,9 +139,7 @@
+         </div>
+       </div>
+       <div class="service-card">
+-        <!-- <div class="service-card__img"><div class="img-placeholder">IMAGINE SERVICIU</div></div> -->
+-        <div class="service-card__img"><img src="./images/Ortodontie.jpg" class="img-placeholder"></img></div>
+-        <!-- <div class="service-card__img"><div class="img-placeholder">IMAGINE SERVICIU</div></div> -->
++        <div class="service-card__img"><img src="./images/Ortodontie.jpg" class="photo" alt="Tratament ortodontic la clinica Dr. Olga" /></div>
+         <div class="service-card__body">
+           <h3>Ortodonție</h3>
+           <p>Brackeți și alignere transparente pentru o dantură aliniată și un zâmbet armonios la orice vârstă.</p>
+@@ -164,8 +147,7 @@
+         </div>
+       </div>
+       <div class="service-card">
+-        <!-- <div class="service-card__img"><div class="img-placeholder">IMAGINE SERVICIU</div></div> -->
+-        <div class="service-card__img"><img src="./images/ProfilaxieDentara.jpg" class="img-placeholder"></img></div>
++        <div class="service-card__img"><img src="./images/ProfilaxieDentara.jpg" class="photo" alt="Ședință de profilaxie dentară la clinica Dr. Olga" /></div>
+         <div class="service-card__body">
+           <h3>Profilaxie dentară</h3>
+           <p>Detartraj, airflow și consultații preventive pentru menținerea sănătății orale pe termen lung.</p>
+@@ -173,8 +155,7 @@
+         </div>
+       </div>
+       <div class="service-card">
+-        <!-- <div class="service-card__img"><div class="img-placeholder">IMAGINE SERVICIU</div></div> -->
+-        <div class="service-card__img"><img src="./images/Endodontie.jpg" class="img-placeholder"></img></div>
++        <div class="service-card__img"><img src="./images/Endodontie.jpg" class="photo" alt="Tratament endodontic (de canal) la clinica Dr. Olga" /></div>
+         <div class="service-card__body">
+           <h3>Endodonție</h3>
+           <p>Tratamente de canal modern, fără durere, pentru salvarea dinților afectați în profunzime.</p>
+@@ -182,8 +163,7 @@
+         </div>
+       </div>
+       <div class="service-card">
+-        <!-- <div class="service-card__img"><div class="img-placeholder">IMAGINE SERVICIU</div></div> -->
+-        <div class="service-card__img"><img src="./images/ProteticaDentara.jpg" class="img-placeholder"></img></div>
++        <div class="service-card__img"><img src="./images/ProteticaDentara.jpg" class="photo" alt="Lucrare de protetică dentară la clinica Dr. Olga" /></div>
+         <div class="service-card__body">
+           <h3>Protetica dentară</h3>
+           <p>Coroane, punți și proteze fixe sau mobilizabile din materiale durabile și cu aspect natural.</p>
+@@ -232,8 +212,7 @@
+   <div class="container">
+     <div class="about-intro" data-reveal>
+       <div>
+-        <!-- <div class="img-placeholder" style="height:480px;">IMAGINE CLINICĂ / DR. OLGA</div> -->
+-        <img class="img-placeholder" style="height:480px;" src="./images/Familia.jpg"></img>
++        <img class="photo" style="height:480px;" src="./images/Familia.jpg" alt="Echipa clinicii Dr. Olga alături de fondatoarea Dr. Olga Munteanu" />
+       </div>
+       <div>
+         <span class="eyebrow">Despre noi</span>
+diff --git a/servicii.html b/servicii.html
+index e1eef5a..3c8cc0f 100644
+--- a/servicii.html
++++ b/servicii.html
+@@ -69,8 +69,7 @@
+   <div class="services-list">
+ 
+     <div class="service-item" data-reveal>
+-      <!-- <div class="service-item__img"><div class="img-placeholder">IMAGINE ESTETICĂ DENTARĂ</div></div> -->
+-       <div class="service-item__img"><img src="./images/StomatologieEstetica.jpg" class="img-placeholder" /></div>
++      <div class="service-item__img"><img src="./images/StomatologieEstetica.jpg" class="photo" alt="Tratament de stomatologie estetică la clinica Dr. Olga" /></div>
+       <div class="service-item__content">
+         <span class="eyebrow">Serviciu</span>
+         <h3>Stomatologie estetică</h3>
+@@ -80,8 +79,7 @@
+     </div>
+ 
+     <div class="service-item" data-reveal>
+-      <!-- <div class="service-item__img"><div class="img-placeholder">IMAGINE IMPLANTOLOGIE</div></div> -->
+-      <div class="service-item__img"><img src="./images/Implantologie.jpg" class="img-placeholder" /></div>
++      <div class="service-item__img"><img src="./images/Implantologie.jpg" class="photo" alt="Implant dentar realizat la clinica Dr. Olga" /></div>
+       <div class="service-item__content">
+         <span class="eyebrow">Serviciu</span>
+         <h3>Implantologie</h3>
+@@ -91,8 +89,7 @@
+     </div>
+ 
+     <div class="service-item" data-reveal>
+-      <!-- <div class="service-item__img"><div class="img-placeholder">IMAGINE ORTODONȚIE</div></div> -->
+-       <div class="service-item__img"><img src="./images/Ortodontie.jpg" class="img-placeholder" /></div>
++      <div class="service-item__img"><img src="./images/Ortodontie.jpg" class="photo" alt="Tratament ortodontic cu brackeți sau alignere la clinica Dr. Olga" /></div>
+       <div class="service-item__content">
+         <span class="eyebrow">Serviciu</span>
+         <h3>Ortodonție</h3>
+@@ -102,8 +99,7 @@
+     </div>
+ 
+     <div class="service-item" data-reveal>
+-      <!-- <div class="service-item__img"><div class="img-placeholder">IMAGINE PROFILAXIE</div></div> -->
+-       <div class="service-item__img"><img src="./images/ProfilaxieDentara.jpg" class="img-placeholder" /></div>
++      <div class="service-item__img"><img src="./images/ProfilaxieDentara.jpg" class="photo" alt="Ședință de profilaxie dentară și detartraj la clinica Dr. Olga" /></div>
+       <div class="service-item__content">
+         <span class="eyebrow">Serviciu</span>
+         <h3>Profilaxie dentară</h3>
+@@ -113,8 +109,7 @@
+     </div>
+ 
+     <div class="service-item" data-reveal>
+-      <!-- <div class="service-item__img"><div class="img-placeholder">IMAGINE ENDODONȚIE</div></div> -->
+-       <div class="service-item__img"><img src="./images/Endodontie.jpg" class="img-placeholder" /></div>
++      <div class="service-item__img"><img src="./images/Endodontie.jpg" class="photo" alt="Tratament endodontic de canal la clinica Dr. Olga" /></div>
+       <div class="service-item__content">
+         <span class="eyebrow">Serviciu</span>
+         <h3>Endodonție</h3>
+@@ -124,8 +119,7 @@
+     </div>
+ 
+     <div class="service-item" data-reveal>
+-      <!-- <div class="service-item__img"><div class="img-placeholder">IMAGINE PROTETICA DENTARĂ</div></div> -->
+-       <div class="service-item__img"><img src="./images/ProteticaDentara.jpg" class="img-placeholder" /></div>
++      <div class="service-item__img"><img src="./images/ProteticaDentara.jpg" class="photo" alt="Lucrare de protetică dentară — coroane și punți la clinica Dr. Olga" /></div>
+       <div class="service-item__content">
+         <span class="eyebrow">Serviciu</span>
+         <h3>Protetica dentară</h3>

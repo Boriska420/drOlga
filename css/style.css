@@ -129,7 +129,7 @@ h4 { font-size: 1.15rem; font-weight: 400; }
 }
 .btn-ghost-white:hover { background: rgba(255,255,255,0.1); }
 
-/* --- Placeholder image blocks --- */
+/* --- Placeholder image blocks (sections without a photo yet) --- */
 .img-placeholder {
   background: var(--placeholder-bg);
   border-radius: var(--radius-lg);
@@ -142,6 +142,16 @@ h4 { font-size: 1.15rem; font-weight: 400; }
   font-family: var(--font-body);
   letter-spacing: 0.1em;
   text-transform: uppercase;
+}
+
+/* --- Real photos --- */
+.photo {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  border-radius: var(--radius-lg);
 }
 
 /* ============================================================
@@ -416,15 +426,14 @@ footer {
   position: relative;
   background: var(--off-white);
 }
-.hero__visual .img-placeholder {
+.hero__photo {
   height: 100%;
-  border-radius: 0;
   min-height: 600px;
-    background-image: url(../images/Echipa.jpg);
-    max-height: 1196px;
-    background-repeat: no-repeat;
-    background-position: 0px -12rem;
-    background-size: cover;
+  max-height: 1196px;
+  background-image: url(../images/Echipa.jpg);
+  background-repeat: no-repeat;
+  background-position: 0px -12rem;
+  background-size: cover;
 }
 .hero__badge {
   position: absolute;
@@ -469,7 +478,7 @@ footer {
   background: var(--white);
 }
 .service-card:hover { box-shadow: var(--shadow-lg); transform: translateY(-3px); }
-.service-card__img .img-placeholder { height: 200px; border-radius: 0; }
+.service-card__img .photo { height: 200px; border-radius: 0; }
 .service-card__body { padding: 24px; }
 .service-card__body h3 {
   font-size: 1.2rem;
@@ -605,7 +614,7 @@ footer {
    ABOUT PAGE
    ============================================================ */
 .about-intro { display: grid; grid-template-columns: 1fr 1fr; gap: 72px; align-items: center; }
-.about-intro .img-placeholder { height: 520px; }
+.about-intro .photo { height: 520px; }
 .values-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; margin-top: 48px; }
 .value-card {
   padding: 32px;
@@ -637,7 +646,7 @@ footer {
   transition: all 0.25s;
 }
 .team-card:hover { box-shadow: var(--shadow-lg); transform: translateY(-3px); }
-.team-card__photo .img-placeholder { height: 280px; border-radius: 0; }
+.team-card__photo .photo { height: 280px; border-radius: 0; object-position: center 20%; }
 .team-card__body { padding: 28px; }
 .team-card__name {
   font-family: var(--font-display);
@@ -682,7 +691,7 @@ footer {
 }
 .service-item:nth-child(even) .service-item__img { order: 2; }
 .service-item:nth-child(even) .service-item__content { order: 1; }
-.service-item__img .img-placeholder { height: 320px; border-radius: 0; }
+.service-item__img .photo { height: 320px; border-radius: 0; }
 .service-item__content {
   padding: 56px 52px;
   display: flex;
@@ -879,7 +888,7 @@ footer {
   .hero { grid-template-columns: 1fr; min-height: auto; }
   .hero__content { padding: 40px 0 32px; order: 2; }
   .hero__visual { order: 1; }
-  .hero__visual .img-placeholder { min-height: 280px; background-size: cover; background-position: center; }
+  .hero__photo { min-height: 280px; background-size: cover; background-position: center; }
   .hero__badge { display: none; }
 
   .grid-2, .about-intro, .contacts-grid { grid-template-columns: 1fr; }
