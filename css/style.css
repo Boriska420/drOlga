@@ -631,8 +631,10 @@ footer {
 /* ============================================================
    ABOUT PAGE
    ============================================================ */
-.about-intro { display: grid; grid-template-columns: 1fr 1fr; gap: 72px; align-items: center; }
-.about-intro .photo { height: auto; aspect-ratio: 3 / 2; }
+.about-intro1 { display: grid; grid-template-columns: 1fr 1fr; gap: 72px; align-items: center; }
+.about-intro2 { display: grid; grid-template-columns: 1fr; gap: 72px; align-items: center; }
+.about-intro1 .photo { height: auto; aspect-ratio: 3 / 2; }
+.about-intro2 .photo { height: auto; aspect-ratio: 3 / 2; }
 .values-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; margin-top: 48px; }
 .value-card {
   padding: 32px;
