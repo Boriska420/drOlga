@@ -631,7 +631,7 @@ footer {
 /* ============================================================
    ABOUT PAGE
    ============================================================ */
-.about-intro1 { display: grid; grid-template-columns: 1fr 1fr; gap: 72px; align-items: center; }
+.about-intro1 { display: block; grid-template-columns: 1fr 1fr; gap: 72px; align-items: center; }
 .about-intro2 { display: grid; grid-template-columns: 1fr; gap: 72px; align-items: center; }
 .about-intro1 .photo { height: auto; aspect-ratio: 3 / 2; }
 .about-intro2 .photo { height: auto; aspect-ratio: 3 / 2; }
