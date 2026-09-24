@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://drolga.onrender.com/sitemap.xml
