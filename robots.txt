@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://drolga.onrender.com/sitemap.xml
+Sitemap: https://drolga.md/sitemap.xml
